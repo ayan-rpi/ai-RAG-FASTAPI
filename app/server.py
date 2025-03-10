@@ -18,7 +18,7 @@ async def query_rag(query_data: Query):
     
     try:
         answer = rag(query_data.query)
-        return json.loads(answer)
+        return {"answer":answer}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
